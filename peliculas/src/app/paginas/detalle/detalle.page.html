@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-button>
+            <ion-back-button defaultHref="/"></ion-back-button>
+            <ion-icon slot="icon-only" name="md-arrow-round-back" (click)="goBack()"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title>
+      {{pelicula.title}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row>
+        <ion-col size="12" size-xm="12" size-sm="6" size-md="4" size-lg="3">
+            <ion-img src="https://image.tmdb.org/t/p/w500{{pelicula.poster_path}}"></ion-img>
+        </ion-col>
+    </ion-row>
+    <ion-button (click)="agregarFavoritos()">
+      Favoritos
+        <ion-icon slot="icon-only" name="star"></ion-icon>
+    </ion-button>
+    <ion-list>
+        <ion-item >
+          <ion-label text-wrap>
+            <ion-text>
+                Titulo original: {{pelicula.original_title}} 
+            </ion-text>
+          </ion-label>
+          </ion-item>
+        <ion-item >
+            <ion-label text-wrap>
+                <ion-text>
+                    Fecha: {{pelicula.release_date}} 
+                </ion-text>
+              </ion-label>
+          </ion-item>
+          <ion-item >
+              <ion-label text-wrap>
+                  <ion-text>
+                      Vision general:
+                  </ion-text>
+                  <p>{{pelicula.overview}}</p>
+                </ion-label>
+            </ion-item>
+    </ion-list>
+</ion-content>
